@@ -39,5 +39,6 @@
                     Text="Delete Item"
                     Clicked="OnDeleteItemClicked"/>
         </Grid>
+        
     </StackLayout>
 </ContentPage>
