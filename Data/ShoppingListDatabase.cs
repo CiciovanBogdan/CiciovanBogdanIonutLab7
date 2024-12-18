@@ -92,10 +92,12 @@ namespace CiciovanBogdanIonutLab7.Data
             return _database.Table<ListProduct>()
                 .FirstOrDefaultAsync(lp => lp.ShopListID == shoplistId && lp.ProductID == productId);
         }
+
         public Task<List<Shop>> GetShopsAsync()
         {
             return _database.Table<Shop>().ToListAsync();
         }
+
         public Task<int> SaveShopAsync(Shop shop)
         {
             if (shop.ID != 0)
@@ -106,6 +108,11 @@ namespace CiciovanBogdanIonutLab7.Data
             {
                 return _database.InsertAsync(shop);
             }
+        }
+
+        public Task<int> DeleteShopAsync(Shop shop)
+        {
+            return _database.DeleteAsync(shop);
         }
     }
 }

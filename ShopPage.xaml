@@ -4,18 +4,19 @@
              x:Class="CiciovanBogdanIonutLab7.ShopPage"
              Title="ShopPage">
     <ContentPage.Content>
-        <StackLayout Margin="20">
+        <StackLayout Margin="20" Spacing="20">
             <Editor Placeholder="Enter shop name"
-                    Margin="20"
+                    Margin="20,0"
                     Text="{Binding ShopName}"
                     HeightRequest="50" />
-            <Editor Placeholder="Enter shop adress"
-                    Margin="20"
+            <Editor Placeholder="Enter shop address"
+                    Margin="20,0"
                     Text="{Binding Adress}"
                     HeightRequest="50" />
-            <Grid>
+
+            <!-- Folosim un Grid pentru a organiza butoanele în două coloane -->
+            <Grid ColumnSpacing="10" RowSpacing="10">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
@@ -23,15 +24,28 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
+
+                <!-- Primul buton: Save Shop -->
                 <Button Text="Save Shop"
+                        Grid.Row="0"
                         Grid.Column="0"
                         MaximumWidthRequest="200"
                         Clicked="OnSaveButtonClicked" />
+
+                <!-- Al doilea buton: Show on Map -->
                 <Button Text="Show on Map"
+                        Grid.Row="0"
                         Grid.Column="1"
                         MaximumWidthRequest="200"
-                        Clicked="OnShowMapButtonClicked">
-                </Button>
+                        Clicked="OnShowMapButtonClicked" />
+
+                <!-- Al treilea buton: Delete Shop -->
+                <Button Text="Delete Shop"
+                        Grid.Row="1"
+                        Grid.ColumnSpan="2"
+                        BackgroundColor="Red"
+                        TextColor="White"
+                        Clicked="OnDeleteButtonClicked" />
             </Grid>
         </StackLayout>
     </ContentPage.Content>
