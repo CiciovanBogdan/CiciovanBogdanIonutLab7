@@ -14,7 +14,6 @@
                     Text="{Binding Adress}"
                     HeightRequest="50" />
 
-            <!-- Folosim un Grid pentru a organiza butoanele în două coloane -->
             <Grid ColumnSpacing="10" RowSpacing="10">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
@@ -25,21 +24,18 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <!-- Primul buton: Save Shop -->
                 <Button Text="Save Shop"
                         Grid.Row="0"
                         Grid.Column="0"
                         MaximumWidthRequest="200"
                         Clicked="OnSaveButtonClicked" />
 
-                <!-- Al doilea buton: Show on Map -->
                 <Button Text="Show on Map"
                         Grid.Row="0"
                         Grid.Column="1"
                         MaximumWidthRequest="200"
                         Clicked="OnShowMapButtonClicked" />
 
-                <!-- Al treilea buton: Delete Shop -->
                 <Button Text="Delete Shop"
                         Grid.Row="1"
                         Grid.ColumnSpan="2"
